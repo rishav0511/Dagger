@@ -8,9 +8,11 @@ public class Car {
     private static final String TAG = "Car";
     private Engine engine;
     private Wheel wheel;
+    private Driver driver;
 
     @Inject
-    public Car(Engine engine, Wheel wheel) {
+    public Car(Driver driver,Engine engine, Wheel wheel) {
+        this.driver=driver;
         this.engine = engine;
         this.wheel = wheel;
     }
@@ -22,6 +24,6 @@ public class Car {
 
     public void drive(){
         engine.start();
-        Log.d(TAG, TAG+" driving...");
+        Log.d(TAG, TAG+" "+driver+" drives "+this);
     }
 }
