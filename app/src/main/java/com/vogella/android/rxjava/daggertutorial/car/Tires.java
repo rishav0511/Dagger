@@ -1,4 +1,4 @@
-package com.vogella.android.rxjava.daggertutorial;
+package com.vogella.android.rxjava.daggertutorial.car;
 
 import android.util.Log;
 

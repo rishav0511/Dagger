@@ -1,4 +1,4 @@
-package com.vogella.android.rxjava.daggertutorial;
+package com.vogella.android.rxjava.daggertutorial.car;
 
 import android.util.Log;
 
@@ -21,6 +21,7 @@ public class Car {
     }
 
     public void drive(){
+        engine.start();
         Log.d(TAG, TAG+" driving...");
     }
 }

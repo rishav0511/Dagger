@@ -1,5 +1,9 @@
 package com.vogella.android.rxjava.daggertutorial;
 
+import com.vogella.android.rxjava.daggertutorial.car.Rims;
+import com.vogella.android.rxjava.daggertutorial.car.Tires;
+import com.vogella.android.rxjava.daggertutorial.car.Wheel;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -19,7 +23,7 @@ public class WheelsModule {
     }
 
     @Provides
-    Wheel provideWheels(Rims rims,Tires tires){
+    Wheel provideWheels(Rims rims, Tires tires){
         return new Wheel(rims,tires);
     }
 }
