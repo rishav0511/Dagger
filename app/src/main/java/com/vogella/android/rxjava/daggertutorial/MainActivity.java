@@ -16,12 +16,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CarComponent carComponent = DaggerCarComponent.builder()
-                .horsePower(150)
+        ActivityComponent activityComponent = DaggerActivityComponent.builder()
+                .horsePower(120)
                 .engineCapacity(1400)
+                .AppComponent(((ExampleApp) getApplication()).getAppComponent())
                 .build();
 //        car = carComponent.getCar();      //Constructor Injection
-        carComponent.inject(this);      //Field Injection
+        activityComponent.inject(this);      //Field Injection
 
         car1.drive();
         car2.drive();

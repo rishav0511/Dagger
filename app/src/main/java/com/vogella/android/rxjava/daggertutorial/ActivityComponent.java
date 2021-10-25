@@ -3,16 +3,16 @@ package com.vogella.android.rxjava.daggertutorial;
 import com.vogella.android.rxjava.daggertutorial.car.Car;
 
 import javax.inject.Named;
-import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
 
-@Singleton
-@Component (modules = {WheelsModule.class, PetrolEngineModule.class})
-public interface CarComponent {
+@PerActivity
+@Component (dependencies = AppComponent.class, modules = {WheelsModule.class, PetrolEngineModule.class})
+public interface ActivityComponent {
     Car getCar();
     void inject(MainActivity mainActivity);
+
     @Component.Builder
     interface Builder{
         @BindsInstance
@@ -21,6 +21,8 @@ public interface CarComponent {
         @BindsInstance
         Builder engineCapacity(@Named("engine capacity") int engineCapacity);
 
-        CarComponent build();
+        ActivityComponent build();
+
+        Builder AppComponent(AppComponent component);
     }
 }

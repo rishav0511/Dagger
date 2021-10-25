@@ -2,8 +2,11 @@ package com.vogella.android.rxjava.daggertutorial.car;
 
 import android.util.Log;
 
+import com.vogella.android.rxjava.daggertutorial.PerActivity;
+
 import javax.inject.Inject;
 
+@PerActivity
 public class Car {
     private static final String TAG = "Car";
     private Engine engine;
