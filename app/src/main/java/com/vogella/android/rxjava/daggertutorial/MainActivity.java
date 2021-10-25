@@ -17,10 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ActivityComponent activityComponent = ((ExampleApp) getApplication()).getAppComponent()
-                .getActivityComponentBuilder()
-                .horsePower(150)
-                .engineCapacity(1400)
-                .build();
+                .getActivityComponentFactory()
+                .create(150,1500);
 //        car = carComponent.getCar();      //Constructor Injection
         activityComponent.inject(this);      //Field Injection
 

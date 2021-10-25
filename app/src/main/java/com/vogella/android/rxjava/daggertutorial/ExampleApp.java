@@ -7,7 +7,7 @@ public class ExampleApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        component = DaggerAppComponent.create();
+        component = DaggerAppComponent.factory().create(new DriverModule("Rishav"));
     }
     public AppComponent getAppComponent(){
         return component;

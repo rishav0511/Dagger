@@ -27,6 +27,6 @@ public class Car {
 
     public void drive(){
         engine.start();
-        Log.d(TAG, TAG+" "+driver+" drives "+this);
+        Log.d(TAG, TAG+" "+driver+" "+driver.name+" "+" drives "+this);
     }
 }
